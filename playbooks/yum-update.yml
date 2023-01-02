@@ -1,0 +1,7 @@
+---
+  - name: Update packages
+    hosts: all
+    become: true
+    tasks:
+      - name: Updating yum packages
+        yum: name=* state=latest

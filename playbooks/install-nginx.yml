@@ -1,0 +1,23 @@
+---
+  - name: Install Nginx
+    hosts: all
+    become: true
+    tasks:
+      - name: Enable EPEL
+        shell: "amazon-linux-extras enable epel"
+
+      - name: Install EPEL
+        yum:
+          name: epel-release
+          state: present
+
+      - name: Install Nginx
+        yum:
+          name: nginx
+          state: present
+          
+      - name: Start Nginx
+        service:
+          name: nginx
+          state: started
+          enabled: yes

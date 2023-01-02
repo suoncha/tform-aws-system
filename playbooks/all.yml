@@ -1,0 +1,4 @@
+---
+  - import_playbook: yum-update.yml
+  - import_playbook: install-docker.yml
+  - import_playbook: install-nginx.yml
