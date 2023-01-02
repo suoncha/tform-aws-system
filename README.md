@@ -21,8 +21,10 @@ Modules:
 
 How to run:
 
-- Linux: The scripts in ec2 should be working fine and there's no problem with it.
-- Windows/WSL: Here come the pain. If you store this repo in Window directories (ex: /mnt/c:/...), the file permission of .pem files would be overridden by Window Security Rules as 'chmod' would take no effect on those files. To prevent that, you should store this repo in Linux directories (ex: /home, ...). Or you can comment those scripts in modules/ec2/main.tf if you don't want to run Ansible playbooks.
+- UPDATE: I changed the approach to run, now you can run this on both Windows/Linux without changing the code
+- terraform init
+- terraform apply -auto-aprrove => This will create defined resources, .pem files to use for SSH and .ini files for Ansible
+- (Linux/WSL only) ./ansible.sh (If you're using WSL, be sure that this repo is in a Linux-based directory)
 
 ## Inputs
 

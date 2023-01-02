@@ -1,0 +1,2 @@
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ec2-user --private-key ./modules/ssh/suoncha-key.pem -i suoncha.ini playbooks/all.yml &
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ec2-user --private-key ./modules/ssh/dopo-key.pem -i dopo.ini playbooks/all.yml &

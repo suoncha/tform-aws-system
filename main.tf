@@ -26,3 +26,13 @@ module "ec2" {
   dopo_pub = module.ssh.dopo_pub
   sg_proxy = module.networking.sg_proxy
 }
+
+resource "local_file" "suoncha_cfg" {
+    content  = module.ec2.suoncha_ip
+    filename = "suoncha.ini"
+}
+
+resource "local_file" "dopo_cfg" {
+    content  = module.ec2.dopo_ip
+    filename = "dopo.ini"
+}
