@@ -13,3 +13,7 @@ variable "dopo_pub" {
 variable "sg_proxy" {
   type = any
 }
+
+variable "sg_rke" {
+  type = any
+}

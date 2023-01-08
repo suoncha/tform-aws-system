@@ -48,3 +48,61 @@ resource "aws_security_group" "proxy_group" {
     Name = "proxy_group"
   }
 }
+
+resource "aws_security_group" "rke_group" {
+  name        = "rke_group"
+  vpc_id      = module.vpc.vpc_id
+
+  ingress {
+    from_port   = 2379
+    to_port     = 2379
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
+
+  ingress {
+    from_port   = 2380
+    to_port     = 2380
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
+
+  ingress {
+    from_port   = 6443
+    to_port     = 6443
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
+
+  ingress {
+    from_port   = 8472
+    to_port     = 8472
+    protocol    = "udp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
+
+  ingress {
+    from_port   = 9099
+    to_port     = 9099
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
+
+  ingress {
+    from_port   = 10250
+    to_port     = 10250
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
+
+  ingress {
+    from_port   = 10254
+    to_port     = 10254
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
+
+  tags = {
+    Name = "rke_group"
+  }
+}

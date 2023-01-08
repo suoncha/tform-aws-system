@@ -25,6 +25,7 @@ module "ec2" {
   suoncha_pub = module.ssh.suoncha_pub
   dopo_pub = module.ssh.dopo_pub
   sg_proxy = module.networking.sg_proxy
+  sg_rke = module.networking.sg_rke
 }
 
 resource "local_file" "suoncha_cfg" {
